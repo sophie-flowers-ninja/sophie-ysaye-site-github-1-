@@ -94,3 +94,10 @@
 
 /* Brand typography: force Pragmatica Extended Bold throughout all language versions. */
 html,body,body *,body *::before,body *::after{font-family:Pragmatica,Arial,sans-serif!important;font-weight:700}
+
+/* Mobile enlarged photos: no light strip below the cropped photograph. */
+@media(max-width:800px){
+ .lightbox,.lightbox-media,.lightbox-media .photo-frame{background:#171713!important}
+ .lightbox-media{overflow:hidden;min-height:0}
+ .lightbox-media .photo-frame{display:block;overflow:hidden;min-height:0}
+}
