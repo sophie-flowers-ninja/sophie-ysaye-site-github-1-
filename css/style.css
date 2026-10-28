@@ -75,3 +75,11 @@
 /* Mobile: always show language switcher and Instagram; keep footer links readable. */
 @media(max-width:600px){.header{grid-template-columns:minmax(45px,auto) minmax(0,1fr)}.header-tools{min-width:0;display:flex;justify-content:flex-end;gap:10px}.header-tools .instagram{display:inline-block!important;flex:0 0 auto;white-space:nowrap;font-size:10px;opacity:1;visibility:visible}.header-tools .languages{display:flex;gap:8px;flex:0 0 auto}.footer-bottom{display:grid;grid-template-columns:1fr auto;gap:12px 8px;align-items:center}.footer-legal-links{grid-column:1/-1;display:flex;justify-content:flex-start;gap:22px}.footer-legal-links .privacy-button{font-size:10px;min-height:30px;text-decoration:underline;text-underline-offset:3px}}
 @media(max-width:360px){.header-tools{gap:6px}.header-tools .languages{gap:5px}.header-tools .instagram{font-size:9px}.mini-logo{gap:4px}}
+
+/* Instagram icons on desktop and mobile */
+.header-tools .instagram{display:inline-flex;align-items:center;justify-content:center;line-height:1;padding:8px;min-width:36px;min-height:36px}
+.instagram-icon{display:block;width:21px;height:21px;flex:none}
+.instagram-footer-link{display:inline-flex!important;align-items:center;justify-content:flex-start;min-width:40px;min-height:40px;padding:8px 0}
+.instagram-footer-link .instagram-icon{width:25px;height:25px}
+@media(max-width:800px){.header-tools .instagram{display:inline-flex!important;min-width:36px;min-height:36px;padding:7px}}
+@media(max-width:360px){.header-tools .instagram{min-width:32px;padding:5px}.instagram-icon{width:20px;height:20px}}
