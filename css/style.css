@@ -83,3 +83,11 @@
 .instagram-footer-link .instagram-icon{width:25px;height:25px}
 @media(max-width:800px){.header-tools .instagram{display:inline-flex!important;min-width:36px;min-height:36px;padding:7px}}
 @media(max-width:360px){.header-tools .instagram{min-width:32px;padding:5px}.instagram-icon{width:20px;height:20px}}
+
+/* Photo viewer: visible accessible controls on all screen sizes */
+.lightbox-prev,.lightbox-next{z-index:5;display:flex;align-items:center;justify-content:center;width:52px;height:52px;padding:9px;border:1px solid rgba(243,240,232,.7);border-radius:50%;background:rgba(23,23,19,.6);color:var(--ivory);cursor:pointer;touch-action:manipulation}
+.lightbox-chevron{display:block;width:30px;height:30px;flex:none}
+.lightbox-prev:hover,.lightbox-next:hover{background:var(--ivory);color:var(--ink)}
+.lightbox .lightbox-caption{display:none!important}
+@media(max-width:800px){.lightbox{padding:60px 14px}.lightbox-prev,.lightbox-next{width:44px;height:44px;padding:8px}.lightbox-prev{left:8px}.lightbox-next{right:8px}.lightbox-chevron{width:26px;height:26px}}
+@media(max-width:520px){.lightbox-prev,.lightbox-next{top:auto;bottom:20px;transform:none;width:48px;height:48px}.lightbox-prev{left:calc(50% - 62px)}.lightbox-next{right:calc(50% - 62px)}.lightbox{padding:65px 10px 90px}}
