@@ -51,6 +51,7 @@ for(const dialog of document.querySelectorAll('dialog')){
 }
 document.getElementById('open-contact').addEventListener('click',()=>openDialog(document.getElementById('contact-dialog')));
 document.getElementById('open-privacy').addEventListener('click',()=>openDialog(document.getElementById('privacy-dialog')));
+document.getElementById('open-legal').addEventListener('click',()=>openDialog(document.getElementById('legal-dialog')));
 document.getElementById('project-form').addEventListener('submit',event=>{
  event.preventDefault();const form=new FormData(event.currentTarget);
  const subject=`${words.project} ${form.get('type')} - ${form.get('prenom')}`;
