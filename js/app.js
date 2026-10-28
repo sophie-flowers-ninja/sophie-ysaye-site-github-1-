@@ -8,7 +8,7 @@ const locale={
 const words=locale||{image:'IMAGE',images:'IMAGES'};
 const imageCount=n=>`${n} ${n===1?words.image:words.images}`;
 document.querySelector('.work-count').textContent=imageCount(document.querySelectorAll('.work').length);
-document.querySelectorAll('.language-link').forEach(link=>link.addEventListener('click',()=>{if(window.location.hash)link.hash=window.location.hash}));
+// Language links open the translated page at the top, never preserve an anchor from the previous page.
 const header=document.querySelector('.header');
 window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>20),{passive:true});
 document.getElementById('year').textContent=new Date().getFullYear();
