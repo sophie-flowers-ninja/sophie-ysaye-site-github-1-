@@ -32,8 +32,6 @@ function updatePhoto(){
  document.getElementById('lightbox-crop').style.cssText=sourceFrame.style.cssText;
  enlarged.style.cssText=img.style.cssText;
  document.getElementById('lightbox-media').style.setProperty('--frame-ratio',button.dataset.ratio);
- document.getElementById('lightbox-title').textContent=button.dataset.title;
- document.getElementById('lightbox-position').textContent=`${String(photoIndex+1).padStart(2,'0')} / ${String(activePhotos.length).padStart(2,'0')}`;
 }
 function openDialog(dialog){dialog.showModal();document.body.classList.add('dialog-open');}
 function stepPhoto(step){photoIndex=(photoIndex+step+activePhotos.length)%activePhotos.length;updatePhoto();}
@@ -44,6 +42,11 @@ document.querySelectorAll('.image-button').forEach(button=>button.addEventListen
 lightbox.querySelector('.lightbox-prev').addEventListener('click',()=>stepPhoto(-1));
 lightbox.querySelector('.lightbox-next').addEventListener('click',()=>stepPhoto(1));
 lightbox.addEventListener('keydown',event=>{if(event.key==='ArrowRight'){event.preventDefault();stepPhoto(1)}if(event.key==='ArrowLeft'){event.preventDefault();stepPhoto(-1)}});
+// Swipe navigation on touchscreens; vertical swipes keep their normal behaviour.
+let swipeStart=null;
+lightbox.addEventListener('touchstart',event=>{if(event.touches.length!==1)return;swipeStart={x:event.touches[0].clientX,y:event.touches[0].clientY};},{passive:true});
+lightbox.addEventListener('touchend',event=>{if(!swipeStart||event.changedTouches.length!==1)return;const dx=event.changedTouches[0].clientX-swipeStart.x;const dy=event.changedTouches[0].clientY-swipeStart.y;swipeStart=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.25)stepPhoto(dx<0?1:-1);},{passive:true});
+lightbox.addEventListener('touchcancel',()=>{swipeStart=null;},{passive:true});
 for(const dialog of document.querySelectorAll('dialog')){
  dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
  dialog.addEventListener('close',()=>{if(!document.querySelector('dialog[open]'))document.body.classList.remove('dialog-open')});
