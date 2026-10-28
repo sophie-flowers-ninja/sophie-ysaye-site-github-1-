@@ -71,3 +71,7 @@
 /* Ensure Instagram remains visible beside language selector on mobile */
 @media(max-width:800px){.header-tools .instagram{display:inline-flex!important;align-items:center;visibility:visible;opacity:1;font-size:10px;white-space:nowrap;line-height:1.3}.header-tools{display:flex;align-items:center;gap:12px}.header-tools .languages{display:flex;align-items:center;gap:8px;flex-shrink:0}}
 @media(max-width:520px){.header{padding-left:12px;padding-right:12px}.header-tools{gap:8px}.header-tools .instagram{font-size:9px}.header-tools .languages{gap:6px}.header-tools .language-link{font-size:9px}}
+
+/* Mobile: always show language switcher and Instagram; keep footer links readable. */
+@media(max-width:600px){.header{grid-template-columns:minmax(45px,auto) minmax(0,1fr)}.header-tools{min-width:0;display:flex;justify-content:flex-end;gap:10px}.header-tools .instagram{display:inline-block!important;flex:0 0 auto;white-space:nowrap;font-size:10px;opacity:1;visibility:visible}.header-tools .languages{display:flex;gap:8px;flex:0 0 auto}.footer-bottom{display:grid;grid-template-columns:1fr auto;gap:12px 8px;align-items:center}.footer-legal-links{grid-column:1/-1;display:flex;justify-content:flex-start;gap:22px}.footer-legal-links .privacy-button{font-size:10px;min-height:30px;text-decoration:underline;text-underline-offset:3px}}
+@media(max-width:360px){.header-tools{gap:6px}.header-tools .languages{gap:5px}.header-tools .instagram{font-size:9px}.mini-logo{gap:4px}}
