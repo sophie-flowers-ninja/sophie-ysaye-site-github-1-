@@ -60,3 +60,10 @@
 .gallery:not(.filtered)>.work:nth-child(6){grid-column:9/13}
 @media(max-width:800px){.gallery:not(.filtered)>.work:nth-child(5){grid-column:1/11}.gallery:not(.filtered)>.work:nth-child(6){grid-column:7/13}}
 
+
+/* Legal footer and compact header social link */
+.footer-legal-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.footer-legal-links .privacy-button{white-space:nowrap}
+.privacy-dialog h3{font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin:24px 0 8px}
+.header-tools .instagram{text-transform:uppercase}
+@media(max-width:520px){.footer-legal-links{gap:10px}.header-tools{gap:9px}.header-tools .instagram{font-size:9px}}
